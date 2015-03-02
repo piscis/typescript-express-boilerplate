@@ -5,10 +5,6 @@ merge        = require 'merge2'
 ts           = plugins.typescript
 
 
-gulp.task 'source:tsd', false,()->
-  gulp.src('./tsd.json').pipe(plugins.tsd())
-
-
 gulp.task 'source:views', false,()->
   files = ['./src/views/*.*','./src/views/**/*']
   gulp.src(files)

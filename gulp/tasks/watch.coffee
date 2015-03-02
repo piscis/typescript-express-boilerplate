@@ -1,7 +1,5 @@
 gulp         = require('gulp-help')(require('gulp'))
 plugins      = require('gulp-load-plugins')({ camelize: true })
-runSequence  = require 'run-sequence'
-
 
 gulp.task 'watch', false, (cb)->
 
@@ -26,6 +24,8 @@ gulp.task 'watch', false, (cb)->
     server.changed (err)->
       if !err
         plugins.livereload.changed(file.path)
+      else
+        plugins.util.log err
         
   gulp.watch('./build/public/**/*.*').on 'change', (file)->
     plugins.livereload.changed(file.path)
