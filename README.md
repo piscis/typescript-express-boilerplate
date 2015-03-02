@@ -1,7 +1,7 @@
-# Typescript / ExpressJS / Sass - Boilerplate
+## Typescript / ExpressJS / Sass - Boilerplate
 This is a Typescript boilerplate project for developing ExpressJS based web projects with TypeScript.
 
-### Prerequisites
+#### Prerequisites
 
   1. Install gulp `npm install -g gulp`
   2. Install compass `gem install compass`
@@ -9,6 +9,13 @@ This is a Typescript boilerplate project for developing ExpressJS based web proj
   4. Install node_modules `npm install .`
   5. Install LiveReload browser extension.
   
-### Start developing
+#### Start developing
 
 Execute `gulp develop` to build the project. Open the browser and go to `http://127.0.0.1:3003`
+
+#### Todo's 
+
+  * Add Bower support
+  * More infos README.md
+  * Add a release mode
+  * Clean up typings & package.json
