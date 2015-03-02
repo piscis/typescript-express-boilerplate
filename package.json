@@ -1,0 +1,48 @@
+{
+  "name": "typescript-gulp-sass-express-boilerplate",
+  "version": "1.0.1",
+  "private": true,
+  "description": "A TypeScript Express GULP.js boilerplate project",
+  "homepage": "https://github.com/synapticism/wordpress-gulp-bower-sass",
+  "main": "build/app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/synapticism/wordpress-gulp-bower-sass.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexander Pirsig <self@pirsig.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "coffee-script": "^1.9.1",
+    "async": "^0.9.0",
+    "require-dir": "^0.1.0",
+    "run-sequence": "^1.0.2",
+    "gulp-load-plugins": "^0.8.1",
+    "del": "^1.1.1",
+    "gulp-util": "^3.0.4",
+    "gulp-uglify": "^1.1.0",
+    "gulp": "^3.8.11",
+    "gulp-compass": "^2.0.3",
+    "gulp-minify-css": "^0.5.1",
+    "merge-stream": "^0.1.7",
+    "gulp-help": "^1.3.3",
+    "gulp-sourcemaps": "^1.5.0",
+    "gulp-typescript": "^2.4.2",
+    "gulp-concat": "^2.5.2",
+    "merge2": "^0.3.1",
+    "gulp-livereload": "^3.8.0",
+    "gulp-develop-server": "^0.3.0"
+  },
+  "dependencies": {
+    "express": "^4.12.1",
+    "socket.io": "^1.3.4",
+    "method-override": "^2.3.1",
+    "errorhandler": "^1.3.4",
+    "ejs": "^2.3.1",
+    "body-parser": "^1.12.0",
+    "winston": "^0.9.0",
+    "ejs-mate": "^2.1.0"
+  }
+}

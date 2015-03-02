@@ -1,0 +1,15 @@
+# IDE
+.idea
+*.iml
+
+# NodeJS
+node_modules
+npm-debug.log
+
+# Development
+build
+release
+
+# Temp-Files
+src/assets/tmp
+.sass-cache
