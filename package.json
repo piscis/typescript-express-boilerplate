@@ -3,11 +3,11 @@
   "version": "1.0.1",
   "private": true,
   "description": "A TypeScript Express GULP.js boilerplate project",
-  "homepage": "https://github.com/synapticism/wordpress-gulp-bower-sass",
+  "homepage": "https://github.com/piscis/typescript-gulp-express-boilerplate",
   "main": "build/app.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/synapticism/wordpress-gulp-bower-sass.git"
+    "url": "https://github.com/piscis/typescript-gulp-express-boilerplate.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
