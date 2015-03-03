@@ -53,5 +53,28 @@ gulp.task 'source:typescript:frontend', false,()->
   
   return result
   
+gulp.task 'source:bower',false,(cb)->
+  
+  jsFilter = plugins.filter('**/*.min.js')
+  cssFilter = plugins.filter('**/*.min.css')
+  
+  return plugins.bower()
+    .pipe(jsFilter)
+    .pipe(plugins.concat('vendor.js'))
+    .pipe(gulp.dest("./build/public/components"))
+    .pipe(jsFilter.restore())
+    .pipe(cssFilter)
+    .pipe(plugins.concat('vendor.css'))
+    .pipe(gulp.dest("./build/public/components"))
+    .pipe(cssFilter.restore())
+    .pipe(plugins.rename((path) ->
+      
+      if (~path.dirname.indexOf('fonts'))
+        path.dirname = '/fonts'
+      return path
+    ))
+    .pipe(gulp.dest("./build/public/components"))
+  
+  
 gulp.task 'source',false,(cb)->
-  runSequence(['source:typescript:backend','source:typescript:frontend','source:views'],cb)
+  runSequence(['source:typescript:backend','source:typescript:frontend','source:views','source:bower'],cb)

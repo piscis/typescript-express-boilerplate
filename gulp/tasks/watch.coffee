@@ -7,9 +7,9 @@ gulp.task 'watch', false, (cb)->
   
   server.listen({path:'./build/app.js'},plugins.livereload.listen)
   
-  gulp.watch ['./src/*.ts','./src/**/*.{ts,js}','!./src/assets/*.{ts,js}'], ['source:typescript:backend']
+  gulp.watch ['./src/*.ts','./src/**/*.{ts,js}','!./src/assets/**/*.{ts,js}'], ['source:typescript:backend']
 
-  gulp.watch ['!./src/**/*.{ts,js}','./src/assets/*.{ts,js}'], ['source:typescript:frontend']
+  gulp.watch ['!./src/**/*.{ts,js}','./src/assets/**/*.{ts,js}'], ['source:typescript:frontend']
     
   gulp.watch './src/**/*.{scss,sass}', ['styles:compass']
     
@@ -27,5 +27,5 @@ gulp.task 'watch', false, (cb)->
       else
         plugins.util.log err
         
-  gulp.watch('./build/public/**/*.*').on 'change', (file)->
+  gulp.watch(['./build/public/**/*.*','./build/**/*.ejs']).on 'change', (file)->
     plugins.livereload.changed(file.path)

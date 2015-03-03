@@ -9,6 +9,7 @@ npm-debug.log
 # Development
 build
 release
+bower_components
 
 # Temp-Files
 src/assets/tmp

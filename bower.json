@@ -1,0 +1,21 @@
+{
+  "name": "typescript-gulp-express-boilerplate",
+  "version": "1.0.1",
+  "homepage": "https://github.com/piscis/typescript-gulp-express-boilerplate",
+  "authors": [
+    "Alexander Pirsig <apirsig@web.de>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "bootstrap": "~3.3.2"
+  }
+}
