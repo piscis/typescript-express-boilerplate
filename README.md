@@ -11,8 +11,6 @@ Sourcecode is build by **Gulp.JS** and the following features are provided via g
   * Express reload (development)
   * SASS support via Compass
   * TSD typing support via TSD manager see `tsd.json` for details
-  * Magnification of CSS and JavaScript output **(TBD)**
-  * Source code Analyses via JSHint **(TBD)**
 
 #### Prerequisites
 
