@@ -1,6 +1,6 @@
 {
   "name": "typescript-gulp-sass-express-boilerplate",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "private": true,
   "description": "A TypeScript Express GULP.js boilerplate project",
   "homepage": "https://github.com/piscis/typescript-gulp-express-boilerplate",
