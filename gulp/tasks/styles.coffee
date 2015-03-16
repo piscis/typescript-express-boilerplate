@@ -17,6 +17,12 @@ gulp.task 'styles:compass',false,(cb)->
       image: 'src/assets/images',
       fonts: 'src/assets/fonts',
     }))
+    .on('error', (err)->
+      # Would like to catch the error here
+      plugins.util.log(error);
+      this.emit('end');
+    )
+    .pipe(plugins.if(global.conf.compress,plugins.minifyCss()))
     .pipe(gulp.dest('./src/assets/tmp'))
 
 
@@ -26,6 +32,7 @@ gulp.task 'styles:compass',false,(cb)->
   ]
 
   streamB = gulp.src(filesB)
+    .pipe(plugins.if(global.conf.compress,plugins.minifyCss()))
     .pipe(gulp.dest('./build/public/assets/css'))
 
   return merge([streamA,streamB])
@@ -36,8 +43,9 @@ gulp.task 'styles:fonts',false,(cb)->
 
 gulp.task 'styles:images',false,(cb)->
   return gulp.src('./src/assets/images')
+    .pipe(plugins.if(global.conf.compress,plugins.imagemin()))
     .pipe(gulp.dest('./build/public/assets'))
 
 
-gulp.task 'styles','Build stylesheets',(cb)->
+gulp.task 'styles',false, (cb)->
   runSequence(['styles:compass','styles:images','styles:fonts'],cb)

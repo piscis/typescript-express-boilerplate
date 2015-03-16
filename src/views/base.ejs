@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>It's <%=who%></title>
         <link rel="stylesheet" type="text/css" href="/components/vendor.css" />
         <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+
+        <!-- build:css /vendor/css/site.css-->
+        <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet">
+        <!-- endbuild -->
+
         
+        <link href="/assets/css/foo.css" rel="stylesheet">
+        <link href="/assets/css/main.css" rel="stylesheet">
+
     </head>
     <body>
         <nav class="navbar navbar-default">
@@ -67,7 +76,10 @@
             </section>
         </div>
 
-        <script type="text/javascript" src="/components/vendor.js"></script>
-        <script type="text/javascript" src="/assets/script/main.js"></script>
+        
+        <!-- build:js /vendor/js/vendor.js-->
+        <script src="/bower_components/jquery/dist/jquery.js"></script>
+        <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <!-- endbuild -->
     </body>
 </html>

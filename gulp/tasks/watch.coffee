@@ -11,7 +11,7 @@ gulp.task 'watch', false, (cb)->
 
   gulp.watch ['!./src/**/*.{ts,js}','./src/assets/**/*.{ts,js}'], ['source:typescript:frontend']
     
-  gulp.watch './src/**/*.{scss,sass}', ['styles:compass']
+  gulp.watch ['./src/**/*.{scss,sass,css}','!./src/**/tmp/**/*.*'], ['styles:compass']
     
   gulp.watch './src/**/*.{png,jpg,jpeg,gif,svg}', ['source:images']
     

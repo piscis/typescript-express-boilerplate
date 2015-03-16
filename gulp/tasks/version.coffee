@@ -2,6 +2,7 @@ gulp         = require('gulp-help')(require('gulp'))
 plugins      = require('gulp-load-plugins')({ camelize: true })
 del          = require('del')
 vinylPaths   = require('vinyl-paths')
+merge        = require 'merge2'
 
 promptBump = (callback) ->
   prompt = require('gulp-prompt')
@@ -34,28 +35,23 @@ promptBump = (callback) ->
           return
     ))
   
-gulp.task 'version:release', false, (cb) ->
+gulp.task 'version:bump', false, (cb) ->
   jeditor = require("gulp-json-editor")
 
   return promptBump (newVer)->
-    streamqueue = require('streamqueue')
-    stream = streamqueue({ objectMode: true })
 
     #update the main project version number
-    stream.queue(
-      gulp.src('./package.json')
-        .pipe(jeditor({
-          'version': newVer
-        }))
-        .pipe(gulp.dest("./"))
-    );
+    streamB = gulp.src('./package.json')
+      .pipe(jeditor({
+        'version': newVer
+      }))
+      .pipe(gulp.dest("./"))
 
-    stream.queue(
-      gulp.src('./bower.json')
-        .pipe(jeditor({
-          'version': newVer
-        }))
-        .pipe(gulp.dest("./"))
-      );
 
-    return stream.done();
+    streamA =   gulp.src('./bower.json')
+      .pipe(jeditor({
+        'version': newVer
+      }))
+      .pipe(gulp.dest("./"))
+
+    return merge([streamA,streamB]);

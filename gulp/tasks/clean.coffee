@@ -4,10 +4,10 @@ runSequence  = require 'run-sequence'
 del          = require 'del'
 
 gulp.task 'clean:build',false, (cb)->
-  del(['build/**/*.*'], cb)
+  del(['build/*','build/*.*'], cb)
 
 gulp.task 'clean:release',false, (cb)->
-  del(['release/**/*.*'], cb)
+  del(['release/*','release/*.*'], cb)
 
 gulp.task 'clean:all',false, (cb)->
   runSequence(['clean:build','clean:release'], cb)

@@ -43,10 +43,7 @@ Plugin needs to be installed and activated.
 #### Todo's
 
   * More infos README.md
-  * Clean up  TypeScript definition files & package.json
-  * Optimize JS + CSS and implement release task
-  * Add JSHint
-  * Add Compression tasks for CSS and JavaScript
+  * Clean up TypeScript definition files & package.json
   
 ####(The MIT License)
 
