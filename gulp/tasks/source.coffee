@@ -58,7 +58,7 @@ gulp.task 'source:bower',false,(cb)->
   jsFilter = plugins.filter('**/*.min.js')
   cssFilter = plugins.filter('**/*.min.css')
   
-  return plugins.bower()
+  return plugins.bower({ cmd: 'install'})
     .pipe(jsFilter)
     .pipe(plugins.concat('vendor.js'))
     .pipe(gulp.dest("./build/public/components"))

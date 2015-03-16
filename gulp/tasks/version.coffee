@@ -6,7 +6,7 @@ vinylPaths   = require('vinyl-paths')
 promptBump = (callback) ->
   prompt = require('gulp-prompt')
   semver = require('semver')
-  pkg = require('./../package.json')
+  pkg = require('./../../package.json')
 
   return gulp.src('')
     .pipe(prompt.prompt({
@@ -33,24 +33,6 @@ promptBump = (callback) ->
         else
           return
     ))
-
-makeChangelog = (newVer) ->
-  streamqueue = require('streamqueue')
-  stream = streamqueue({ objectMode: true })
-  exec = require('gulp-exec')
-  concat = require('gulp-concat')
-
-  stream.queue(gulp.src('').pipe(exec('node ./changelog.js ' + newVer, { pipeStdout: true })))
-  stream.queue(gulp.src('./../../CHANGELOG.md').pipe(vinylPaths(del)))
-
-  return stream.done()
-    .pipe(concat('CHANGELOG.md'))
-    .pipe(gulp.dest('./'))
-
-  
-
-gulp.task 'version:changelog',false,(cb)->
-  return promptBump(makeChangelog)
   
 gulp.task 'version:release', false, (cb) ->
   jeditor = require("gulp-json-editor")
@@ -59,12 +41,9 @@ gulp.task 'version:release', false, (cb) ->
     streamqueue = require('streamqueue')
     stream = streamqueue({ objectMode: true })
 
-    # make the changelog
-    #stream.queue(makeChangelog(newVer))
-
     #update the main project version number
     stream.queue(
-      gulp.src('./../../package.json')
+      gulp.src('./package.json')
         .pipe(jeditor({
           'version': newVer
         }))
@@ -72,13 +51,11 @@ gulp.task 'version:release', false, (cb) ->
     );
 
     stream.queue(
-      gulp.src('./../../bower.json')
+      gulp.src('./bower.json')
         .pipe(jeditor({
           'version': newVer
         }))
         .pipe(gulp.dest("./"))
       );
-
-    stream.queue(build(newVer));
 
     return stream.done();
