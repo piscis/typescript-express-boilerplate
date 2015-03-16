@@ -32,7 +32,7 @@ the Express instance will be restart. Please note in order to notify the browser
 Plugin needs to be installed and activated.
 
   * Enter `gulp help` to see available gulp tasks
-  * To start developing open a Terminal and execute `gulp develop`
+  * To start developing open a Terminal and execute `gulp dev`
   * Wait for the gulp task to finish
   * Then open a browser browser and go to `http://127.0.0.1:3003`.
   * Go to `src/assets/script/main.ts` and make some changes
